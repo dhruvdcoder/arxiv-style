@@ -11,7 +11,6 @@
 \usepackage{amsfonts}       % blackboard math symbols
 \usepackage{nicefrac}       % compact symbols for 1/2, etc.
 \usepackage{microtype}      % microtypography
-\usepackage{cleveref}       % smart cross-referencing
 \usepackage{lipsum}         % Can be removed after putting your text content
 \usepackage{graphicx}
 \usepackage{natbib}
@@ -21,6 +20,9 @@
 \usepackage{packages/math}
 \usepackage{packages/boxmath}
 
+% Packages that should be loaded after amsmath
+\usepackage{cleveref}       % smart cross-referencing
+
 \title{A template for the \emph{arxiv} style}
 
 % Here you can change the date presented in the paper title
@@ -28,13 +30,13 @@
 % Or remove it
 %\date{}
 
-\author{ Dhruvesh Patel\thanks{Use footnote for providing further
-		information about author (webpage, alternative
-		address)---\emph{not} for acknowledging funding agencies.} \\
-	College of Information and Computer Sciences\\
-	University of Massachusetts Amherst\\
-	\texttt{dhruveshpate@umass.edu} \\
-	%% examples of more authors
+%\author{ Dhruvesh Patel\thanks{Use footnote for providing further
+%		information about author (webpage, alternative
+%		address)---\emph{not} for acknowledging funding agencies.} \\
+%	College of Information and Computer Sciences\\
+%	University of Massachusetts Amherst\\
+%	\texttt{dhruveshpate@umass.edu} \\
+%	%% examples of more authors
 %	\And
 %	 Dhruvesh Patel\thanks{Use footnote for providing further
 %		information about author (webpage, alternative
@@ -42,22 +44,8 @@
 %	College of Information and Computer Sciences\\
 %	University of Massachusetts Amherst\\
 %	\texttt{dhruveshpate@umass.edu} \\
-	%% \AND
-	%% Coauthor \\
-	%% Affiliation \\
-	%% Address \\
-	%% \texttt{email} \\
-	%% \And
-	%% Coauthor \\
-	%% Affiliation \\
-	%% Address \\
-	%% \texttt{email} \\
-	%% \And
-	%% Coauthor \\
-	%% Affiliation \\
-	%% Address \\
-	%% \texttt{email} \\
-}
+
+%}
 
 % Uncomment to override  the `A preprint' in the header
 %\renewcommand{\headeright}{Technical Report}
