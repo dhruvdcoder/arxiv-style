@@ -1,0 +1,31 @@
+\usepackage[colorinlistoftodos,textsize=tiny]{todonotes}
+%-----------------------Extra commands for collaboration-----------------
+\usepackage[normalem]{ulem}
+\newif\ifsubmissionready
+\submissionreadyfalse
+\def\readytosubmit{\global\submissionreadytrue}
+
+%\readytosubmit % Uncomment this to hide comments and annotations before submitting
+
+\definecolor{blue}{RGB}{0, 93, 170}			%Go Big Blue!
+\definecolor{darkgreen}{RGB}{0, 102, 0}
+\definecolor{lightskyblue}{rgb}{0.53, 0.81, 0.98}
+\definecolor{lightgreen}{rgb}{0.56, 0.93, 0.56}
+\definecolor{palegoldenrod}{rgb}{0.93, 0.91, 0.67}
+\newcommand{\points}[1]{\ifsubmissionready\else{\textbf{Points: }\color{darkgreen}#1}\fi}
+% relax margins for todonotes
+\ifsubmissionready\else\paperwidth=\dimexpr \paperwidth + 6cm\relax\fi
+\ifsubmissionready\else\oddsidemargin=\dimexpr\oddsidemargin + 3cm\relax\fi
+\ifsubmissionready\else\evensidemargin=\dimexpr\evensidemargin + 3cm\relax\fi
+\ifsubmissionready\else\marginparwidth=\dimexpr \marginparwidth + 3cm\relax\fi
+
+\newcommand{\dhruvesh}[1]{\ifsubmissionready\else\todo[color=red]{{\textbf{DP: }#1}}\fi}
+\newcommand{\you}[1]{\ifsubmissionready\else{\todo[color=magenta]{\textbf{YO: }#1}\fi}}
+\newcommand{\someone}[1]{\ifsubmissionready\else{\todo[color=lightgreen]{\textbf{SO: }#1}\fi}}
+\newcommand{\TODO}[1]{\ifsubmissionready\else\todo[color=lightskyblue]{\textbf{TODO:} \textit{#1}}\fi}
+\newcommand{\comment}[1]{\textcolor{red}{\textit{#1}}}
+\newcommand{\na}[1]{\ifsubmissionready#1\else\textcolor{darkgreen}{#1}\fi}
+\newcommand{\mr}[1]{\ifsubmissionready#1\else\textcolor{gray}{#1}\fi}
+\newcommand{\Hide}[1]{}
+\let\oldsout\sout
+\renewcommand{\sout}[1]{\ifsubmissionready\else\oldsout{#1}\fi}

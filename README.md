@@ -1,3 +1,4 @@
+This template is adapted from [https://github.com/kourgeorge/arxiv-style](https://github.com/kourgeorge/arxiv-style) and is available at [https://github.com/dhruvdcoder/arxiv-style](https://github.com/dhruvdcoder/arxiv-style).
 
 ## Description:
 
