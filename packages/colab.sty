@@ -20,8 +20,8 @@
 \ifsubmissionready\else\marginparwidth=\dimexpr \marginparwidth + 3cm\relax\fi
 
 \newcommand{\dhruvesh}[1]{\ifsubmissionready\else\todo[color=red]{{\textbf{DP: }#1}}\fi}
-\newcommand{\you}[1]{\ifsubmissionready\else{\todo[color=magenta]{\textbf{YO: }#1}\fi}}
-\newcommand{\someone}[1]{\ifsubmissionready\else{\todo[color=lightgreen]{\textbf{SO: }#1}\fi}}
+\newcommand{\you}[1]{\ifsubmissionready\else\todo[color=magenta]{{\textbf{YO: }#1}}\fi}
+\newcommand{\someone}[1]{\ifsubmissionready\else\todo[color=lightgreen]{{\textbf{SO: }#1}}\fi}
 \newcommand{\TODO}[1]{\ifsubmissionready\else\todo[color=lightskyblue]{\textbf{TODO:} \textit{#1}}\fi}
 \newcommand{\comment}[1]{\textcolor{red}{\textit{#1}}}
 \newcommand{\na}[1]{\ifsubmissionready#1\else\textcolor{darkgreen}{#1}\fi}
