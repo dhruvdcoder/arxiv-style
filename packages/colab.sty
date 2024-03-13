@@ -19,12 +19,20 @@
 \ifsubmissionready\else\evensidemargin=\dimexpr\evensidemargin + 3cm\relax\fi
 \ifsubmissionready\else\marginparwidth=\dimexpr \marginparwidth + 3cm\relax\fi
 
-\newcommand{\dhruvesh}[1]{\ifsubmissionready\else\todo[color=red]{{\textbf{DP: }#1}}\fi}
-\newcommand{\you}[1]{\ifsubmissionready\else\todo[color=magenta]{{\textbf{YO: }#1}}\fi}
-\newcommand{\someone}[1]{\ifsubmissionready\else\todo[color=lightgreen]{{\textbf{SO: }#1}}\fi}
+% Commands for people to comment
+\newcommand{\dnp}[1]{\ifsubmissionready\else\todo[color=red]{{\textbf{DP: }#1}}\fi}
+\newcommand{\vp}[1]{\ifsubmissionready\else\todo[color=magenta]{{\textbf{VP: }#1}}\fi}
+\newcommand{\kc}[1]{\ifsubmissionready\else\todo[color=lightgreen]{{\textbf{KC: }#1}}\fi}
+
+% common todo command
 \newcommand{\TODO}[1]{\ifsubmissionready\else\todo[color=lightskyblue]{\textbf{TODO:} \textit{#1}}\fi}
+% inline comment
 \newcommand{\comment}[1]{\textcolor{red}{\textit{#1}}}
+
+% command to highligh changes. Kept for submission
 \newcommand{\na}[1]{\ifsubmissionready#1\else\textcolor{darkgreen}{#1}\fi}
+
+% command to suggest removal
 \newcommand{\mr}[1]{\ifsubmissionready#1\else\textcolor{gray}{#1}\fi}
 \newcommand{\Hide}[1]{}
 \let\oldsout\sout
