@@ -24,6 +24,17 @@ Additionally, there is a common `\TODO{}` command as well, which can be used by 
 4. `\na{}`: Usually used in combination with `\sout{}`, like `\sout{something to remove}\na{something added in its place}` to highlight, in green, the new text added. The green color will not be visible in the submission ready version.
 5. `\mr{}`: Stands for "maybe remove". It is a suggestion to remove some text. The text will be highlighted in gray. The text will not be removed in the submission ready version, and will appear as normal text. This is a milder version of `\sout{}`, which removes the text in the submission ready version.
 
+## Math Macros
+1. `packages/math.sty` Basic operators that are frequently used like argmax, norm, etc.
+2. `packages/probability.sty`
+3. `packages/vectors.sty`
+3. `packages/sets.sty`
+4. `packages/graphs.sty`
+5. `packages/theorems.sty`
+
+## Referencing macros
+1. `packages/references.sty` Macros for referencing sections, figures, tables, etc. Use `\secref{}`, `\figref{}`, `\tabref{}`, etc. to reference sections, figures, tables, etc.
+
 
 
 # Features from the original template

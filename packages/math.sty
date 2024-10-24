@@ -1,50 +1,24 @@
 %%%%%%%% Math utils %%%%%%%%%%%%%%
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amsfonts}
-\usepackage{dsfont}
-\usepackage{xspace}
-\usepackage{mathtools}
+\usepackage{amsmath, amsfonts}
+\usepackage{bm} % for bold greek letters
+\usepackage{mathtools} % for paired delimiters like \abs, \norm etc
+
+% operators
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
-
-\newcommand\abs[1]{\left\lvert #1 \right\rvert}
-\newcommand\geombox[1]{\{#1_i^\pm\}_d}
-\newcommand{\E}{\mathcal{E}}
-\newcommand{\Ispace}{\mathbb I}
-\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+\DeclareMathOperator{\sign}{sign} % sign function
+\DeclareMathOperator{\Tr}{Tr} % trace
+\DeclareMathOperator{\diag}{diag} % diagonal matrix
+% inverse trigonometric functions and hyperbolic functions
 \DeclareMathOperator{\arccosh}{arcosh}
-% Theorem environment setup
+\DeclareMathOperator{\arcsinh}{arsinh}
+\DeclareMathOperator{\arctanh}{artanh}
+\DeclareMathOperator{\arccoth}{arcoth}
+\DeclareMathOperator{\arcsech}{arsech}
+\DeclareMathOperator{\arccsch}{arcsch}
 
-\theoremstyle{definition}
-\newtheorem*{definition*}{Definition}
-\newtheorem{definition}{Definition}
-
-\newtheorem{notation*}{Notation}
-\newtheorem{notation}{Notation}
-
-\newtheorem*{example*}{Example}
-\newtheorem{example}{Example}
-
-
-\theoremstyle{plain}
-\newtheorem*{lemma*}{Lemma}
-\newtheorem{lemma}{Lemma}
-
-\newtheorem*{theorem*}{Theorem}
-\newtheorem{theorem}{Theorem}
-
-\newtheorem*{corollary*}{Corollary}
-\newtheorem{corollary}{Corollary}
-
-\newtheorem*{claim*}{Claim}
-\newtheorem{claim}{Claim}
-
-\newtheorem*{proposition*}{Proposition}
-\newtheorem{proposition}{Proposition}
-
-\newtheorem*{conjecture*}{Conjecture}
-\newtheorem{conjecture}{Conjecture}
-
-\newtheorem*{remark*}{Remark}
-\newtheorem{remark}{Remark}
+% paired delimiters
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}% norm: \norm{x} will produce ||x||
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}% absolute value: \abs{x} will produce |x|
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}% ceiling: \ceil{x}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}% floor: \floor{x}

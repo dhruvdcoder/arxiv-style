@@ -1,0 +1,154 @@
+% Commands for probability related stuff.
+% adapted from ICLR 2024 template
+\usepackage{amsmath, amsfonts}
+\usepackage{bm} % for bold greek letters. Use \bm{\alpha} to make bold alpha.
+\usepackage{mathtools} % for paired delimiters like \abs, \norm etc
+%
+\newcommand{\E}{\mathop{\mathbb{E}}} % expectation
+\newcommand{\Var}{\mathop{\textrm{Var}}} % variance
+\newcommand{\Cov}{\mathop{\textrm{Cov}}} % covariance
+\newcommand{\KL}{D_{\textnormal{KL}}} % Kullback-Leibler divergence
+\newcommand{\given}{\;\middle\;} % conditional probability same as \mid which inserts \; space
+
+% Random variables
+\newcommand{\ra}{\textnormal{a}}
+\newcommand{\rb}{\textnormal{b}}
+\newcommand{\rc}{\textnormal{c}}
+\newcommand{\rd}{\textnormal{d}}
+\newcommand{\re}{\textnormal{e}}
+\newcommand{\rf}{\textnormal{f}}
+\newcommand{\rg}{\textnormal{g}}
+\newcommand{\rh}{\textnormal{h}}
+\newcommand{\ri}{\textnormal{i}}
+\newcommand{\rj}{\textnormal{j}}
+\newcommand{\rk}{\textnormal{k}}
+\newcommand{\rl}{\textnormal{l}}
+% rm is already a command, just don't name any random variables m
+\newcommand{\rn}{\textnormal{n}}
+\newcommand{\ro}{\textnormal{o}}
+\newcommand{\rp}{\textnormal{p}}
+%\newcommand{\rq}{\textnormal{q}}
+\newcommand{\rr}{\textnormal{r}}
+\newcommand{\rs}{\textnormal{s}}
+\newcommand{\rt}{\textnormal{t}}
+\newcommand{\ru}{\textnormal{u}}
+\newcommand{\rv}{\textnormal{v}}
+\newcommand{\rw}{\textnormal{w}}
+\newcommand{\rx}{\textnormal{x}}
+\newcommand{\ry}{\textnormal{y}}
+\newcommand{\rz}{\textnormal{z}}
+
+
+% Random vectors
+\newcommand{\rvepsilon}{\bm{\epsilon}}
+\newcommand{\rvtheta}{\bm{\theta}}
+\newcommand{\rva}{\mathbf{a}}
+\newcommand{\rvb}{\mathbf{b}}
+\newcommand{\rvc}{\mathbf{c}}
+\newcommand{\rvd}{\mathbf{d}}
+\newcommand{\rve}{\mathbf{e}}
+\newcommand{\rvf}{\mathbf{f}}
+\newcommand{\rvg}{\mathbf{g}}
+\newcommand{\rvh}{\mathbf{h}}
+\newcommand{\rvi}{\mathbf{i}}
+\newcommand{\rvj}{\mathbf{j}}
+\newcommand{\rvk}{\mathbf{k}}
+\newcommand{\rvl}{\mathbf{l}}
+\newcommand{\rvm}{\mathbf{m}}
+\newcommand{\rvn}{\mathbf{n}}
+\newcommand{\rvo}{\mathbf{o}}
+\newcommand{\rvp}{\mathbf{p}}
+\newcommand{\rvq}{\mathbf{q}}
+\newcommand{\rvr}{\mathbf{r}}
+\newcommand{\rvs}{\mathbf{s}}
+\newcommand{\rvt}{\mathbf{t}}
+\newcommand{\rvu}{\mathbf{u}}
+\newcommand{\rvv}{\mathbf{v}}
+\newcommand{\rvw}{\mathbf{w}}
+\newcommand{\rvx}{\mathbf{x}}
+\newcommand{\rvy}{\mathbf{y}}
+\newcommand{\rvz}{\mathbf{z}}
+
+% Elements of random vectors
+\newcommand{\erva}{\textnormal{a}}
+\newcommand{\ervb}{\textnormal{b}}
+\newcommand{\ervc}{\textnormal{c}}
+\newcommand{\ervd}{\textnormal{d}}
+\newcommand{\erve}{\textnormal{e}}
+\newcommand{\ervf}{\textnormal{f}}
+\newcommand{\ervg}{\textnormal{g}}
+\newcommand{\ervh}{\textnormal{h}}
+\newcommand{\ervi}{\textnormal{i}}
+\newcommand{\ervj}{\textnormal{j}}
+\newcommand{\ervk}{\textnormal{k}}
+\newcommand{\ervl}{\textnormal{l}}
+\newcommand{\ervm}{\textnormal{m}}
+\newcommand{\ervn}{\textnormal{n}}
+\newcommand{\ervo}{\textnormal{o}}
+\newcommand{\ervp}{\textnormal{p}}
+\newcommand{\ervq}{\textnormal{q}}
+\newcommand{\ervr}{\textnormal{r}}
+\newcommand{\ervs}{\textnormal{s}}
+\newcommand{\ervt}{\textnormal{t}}
+\newcommand{\ervu}{\textnormal{u}}
+\newcommand{\ervv}{\textnormal{v}}
+\newcommand{\ervw}{\textnormal{w}}
+\newcommand{\ervx}{\textnormal{x}}
+\newcommand{\ervy}{\textnormal{y}}
+\newcommand{\ervz}{\textnormal{z}}
+
+% Random matrices
+\newcommand{\rmA}{\mathbf{A}}
+\newcommand{\rmB}{\mathbf{B}}
+\newcommand{\rmC}{\mathbf{C}}
+\newcommand{\rmD}{\mathbf{D}}
+\newcommand{\rmE}{\mathbf{E}}
+\newcommand{\rmF}{\mathbf{F}}
+\newcommand{\rmG}{\mathbf{G}}
+\newcommand{\rmH}{\mathbf{H}}
+\newcommand{\rmI}{\mathbf{I}}
+\newcommand{\rmJ}{\mathbf{J}}
+\newcommand{\rmK}{\mathbf{K}}
+\newcommand{\rmL}{\mathbf{L}}
+\newcommand{\rmM}{\mathbf{M}}
+\newcommand{\rmN}{\mathbf{N}}
+\newcommand{\rmO}{\mathbf{O}}
+\newcommand{\rmP}{\mathbf{P}}
+\newcommand{\rmQ}{\mathbf{Q}}
+\newcommand{\rmR}{\mathbf{R}}
+\newcommand{\rmS}{\mathbf{S}}
+\newcommand{\rmT}{\mathbf{T}}
+\newcommand{\rmU}{\mathbf{U}}
+\newcommand{\rmV}{\mathbf{V}}
+\newcommand{\rmW}{\mathbf{W}}
+\newcommand{\rmX}{\mathbf{X}}
+\newcommand{\rmY}{\mathbf{Y}}
+\newcommand{\rmZ}{\mathbf{Z}}
+
+% Elements of random matrices
+\newcommand{\ermA}{\textnormal{A}}
+\newcommand{\ermB}{\textnormal{B}}
+\newcommand{\ermC}{\textnormal{C}}
+\newcommand{\ermD}{\textnormal{D}}
+\newcommand{\ermE}{\textnormal{E}}
+\newcommand{\ermF}{\textnormal{F}}
+\newcommand{\ermG}{\textnormal{G}}
+\newcommand{\ermH}{\textnormal{H}}
+\newcommand{\ermI}{\textnormal{I}}
+\newcommand{\ermJ}{\textnormal{J}}
+\newcommand{\ermK}{\textnormal{K}}
+\newcommand{\ermL}{\textnormal{L}}
+\newcommand{\ermM}{\textnormal{M}}
+\newcommand{\ermN}{\textnormal{N}}
+\newcommand{\ermO}{\textnormal{O}}
+\newcommand{\ermP}{\textnormal{P}}
+\newcommand{\ermQ}{\textnormal{Q}}
+\newcommand{\ermR}{\textnormal{R}}
+\newcommand{\ermS}{\textnormal{S}}
+\newcommand{\ermT}{\textnormal{T}}
+\newcommand{\ermU}{\textnormal{U}}
+\newcommand{\ermV}{\textnormal{V}}
+\newcommand{\ermW}{\textnormal{W}}
+\newcommand{\ermX}{\textnormal{X}}
+\newcommand{\ermY}{\textnormal{Y}}
+\newcommand{\ermZ}{\textnormal{Z}}
