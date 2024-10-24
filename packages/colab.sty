@@ -1,3 +1,26 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%`packages/colab.sty` contains macros and commands for authors to leave comments. It provides a quick way to hide all the comments when you are ready to submit or if you want to see the true length of the paper. To hide all the comments and annotations, uncomment the `%\readytosubmit` line in `packages/colab.sty`. Note that when commented, i.e., not ready to submit, in addition to the comments being visible in the pdf, the margins of the pdf will also be relaxed to accommodate the comments. If you are using this file as a drop-in in some other latex project, the relaxation of margin might raise errors or give warnings. For example, the ICML template raises errors when the margins are relaxed. You should not worry about these error. They will disappear when you uncomment the `%\readytosubmit` line.
+%
+%
+%Each author gets their own color. There are three commands defined for three authors. I suggest naming the commands using the initials of the authors. Modify the following lines to change the initials:
+%
+%```
+%% Commands for people to comment
+%\newcommand{\dnp}[1]{\ifsubmissionready\else\todo[color=red]{{\textbf{DP: }#1}}\fi}
+%\newcommand{\vp}[1]{\ifsubmissionready\else\todo[color=magenta]{{\textbf{VP: }#1}}\fi}
+%\newcommand{\kc}[1]{\ifsubmissionready\else\todo[color=lightgreen]{{\textbf{KC: }#1}}\fi}
+%```
+%
+%You may use `\dnp{}`, etc. to leave comments in the form of todo notes.
+%Additionally, there is a common `\TODO{}` command as well, which can be used by anyone.
+%
+%1. `\TODO{}`: Common TODO note that can be used by anyone.
+%2. `\sout{}`: Stands for "strike out". Use this to mark text that you think should be removed. In the submission ready version, the marked text will not be visible.
+%3. `\comment{}`: Use this to leave an inline (not a todo note comment) comment in red color. This will not be visible in the submission ready version.
+%4. `\na{}`: Usually used in combination with `\sout{}`, like `\sout{something to remove}\na{something added in its place}` to highlight, in green, the new text added. The green color will not be visible in the submission ready version.
+%5. `\mr{}`: Stands for "maybe remove". It is a suggestion to remove some text. The text will be highlighted in gray. The text will not be removed in the submission ready version, and will appear as normal text. This is a milder version of `\sout{}`, which removes the text in the submission ready version.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[colorinlistoftodos,textsize=tiny]{todonotes}
 %-----------------------Extra commands for collaboration-----------------
 \usepackage[normalem]{ulem}
