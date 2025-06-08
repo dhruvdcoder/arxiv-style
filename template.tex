@@ -1,16 +1,14 @@
+\pdfoutput=1
 \documentclass{article}
 
-\usepackage{arxiv}
+%\usepackage{styles/arxiv}
+\usepackage{styles/altpreprint}
 
-
-\usepackage[utf8]{inputenc} % allow utf-8 input
-\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
-\usepackage{hyperref}       % hyperlinks
-\usepackage{url}            % simple URL typesetting
+% uncomment if needed
+%\usepackage{hyperref}       % hyperlinks
+%\usepackage{url}            % simple URL typesetting
 \usepackage{booktabs}       % professional-quality tables
-\usepackage{amsfonts}       % blackboard math symbols
-\usepackage{nicefrac}       % compact symbols for 1/2, etc.
-\usepackage{microtype}      % microtypography
+
 \usepackage{lipsum}         % Can be removed after putting your text content
 \usepackage{graphicx}
 \usepackage{natbib}
@@ -18,80 +16,46 @@
 % Our files
 \usepackage{packages/colab} % for collaboration commands
 \usepackage{packages/math} % for common math symbols
-\usepackage{packages/probability}
-\usepackage{packages/vectors}
-\usepackage{packages/sets}
-\usepackage{packages/graphs}
-\usepackage{packages/theorems} % for theorems, lemmas, etc.
 \usepackage{packages/refs} % for references like \tabref, \figref, etc.
 \usepackage{packages/symbols} % for project specific symbols
 
 % Packages that should be loaded after amsmath
 \usepackage{cleveref}       % smart cross-referencing
 
-\title{A template for the \emph{arxiv} style}
+\title{A general template for academic papers}
+
+
+% Authors
+% See https://mirrors.mit.edu/CTAN/macros/latex/contrib/preprint/authblk.pdf for more details
+
+\usepackage[noblocks]{authblk}
+\usepackage[symbol]{footmisc}          % switch footnotes to use symbols
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\setlength{\affilsep}{0em}
+\renewcommand\Authsep{ } % default Authorsep is ",", we want to remove it
+\renewcommand\Authand{ }
+\renewcommand\Authands{ }
+% One can use symbols instead of numbers as footnote markers like
+%\diamondsuit, \heartsuit, \spadesuit, etc.
+% To make use of default 
+\author[$\diamondsuit$]{Dhruvesh Patel \thanks{equal contribution}}
+% reuse the same footnote for the following author using \protect\footnotemark[\value{footnote}]. If a different footnote is needed, use \thanks{} again
+\author[$\diamondsuit$,$\heartsuit$]{Author 2 \protect\footnotemark[\value{footnote}]\thanks{corresponding author: dpatel@umass.edu}} % an author with multiple affiliations
+\author[$\heartsuit$]{Author 3}
+\affil[$\diamondsuit$]{
+	University of Massachusetts Amherst}
+\affil[$\heartsuit$]{
+University of Pittsburgh}
 
 % Here you can change the date presented in the paper title
 %\date{September 9, 1985}
-% Or remove it
-%\date{}
-
-\newif\ifuniqueAffiliation
-% Comment to use multiple affiliations variant of author block 
-\uniqueAffiliationtrue
-
-\ifuniqueAffiliation % Standard variant of author block
-\author{ Dhruvesh Patel\thanks{Use footnote for providing further
-		information about author (webpage, alternative
-		address)---\emph{not} for acknowledging funding agencies.} \\
-	College of Information and Computer Sciences\\
-	University of Massachusetts Amherst\\
-	\texttt{dhruveshpate@cs.umass.edu} \\
-	%% examples of more authors
-%	\And
-%	 Dhruvesh Patel\thanks{Use footnote for providing further
-%		information about author (webpage, alternative
-%		address)---\emph{not} for acknowledging funding agencies.} \\
-%	College of Information and Computer Sciences\\
-%	University of Massachusetts Amherst\\
-%	\texttt{dhruveshpate@umass.edu} \\
-	%% \AND
-	%% Coauthor \\
-	%% Affiliation \\
-	%% Address \\
-	%% \texttt{email} \\
-	%% \And
-	%% Coauthor \\
-	%% Affiliation \\
-	%% Address \\
-	%% \texttt{email} \\
-	%% \And
-	%% Coauthor \\
-	%% Affiliation \\
-	%% Address \\
-	%% \texttt{email} \\
-}
-\else
-% Multiple affiliations variant of author block
-\usepackage{authblk}
-\renewcommand\Authfont{\bfseries}
-\setlength{\affilsep}{0em}
-% box is needed for correct spacing with authblk
-\newbox{\orcid}\sbox{\orcid}{\includegraphics[scale=0.06]{orcid.pdf}} 
-\author[1]{%
-	\href{https://orcid.org/0000-0000-0000-0000}{\usebox{\orcid}\hspace{1mm}David S.~Hippocampus\thanks{\texttt{hippo@cs.cranberry-lemon.edu}}}%
-}
-\author[1,2]{%
-	\href{https://orcid.org/0000-0000-0000-0000}{\usebox{\orcid}\hspace{1mm}Elias D.~Striatum\thanks{\texttt{stariate@ee.mount-sheikh.edu}}}%
-}
-\affil[1]{Department of Computer Science, Cranberry-Lemon University, Pittsburgh, PA 15213}
-\affil[2]{Department of Electrical Engineering, Mount-Sheikh University, Santa Narimana, Levand}
-\fi
+% Or remove date by defining an empty date
+\date{}
 
 % Uncomment to override  the `A preprint' in the header
 %\renewcommand{\headeright}{Technical Report}
 %\renewcommand{\undertitle}{Technical Report}
-\renewcommand{\shorttitle}{\textit{arXiv} Template}
+%\renewcommand{\shorttitle}{\textit{arXiv} Template}
 
 %%% Add PDF metadata to help others organize their library
 %%% Once the PDF is generated, you can check the metadata with
@@ -114,7 +78,7 @@ pdfkeywords={First keyword, Second keyword, More},
 %\keywords{First keyword \and Second keyword \and More}
 
 
-Here is an example usage of the two main commands (\verb+citet+ and \verb+citep+): Some people thought a thing \citep{kour2014real, hadash2018estimate} but other people thought something else \citep{kour2014fast}. Many people have speculated that if we knew exactly why \citet{kour2014fast} thought this\dots
+Here is an example usage of the two main commands (\verb+citet+ and \verb+citep+): Some people thought a thing \citep{kour2014real} but other people thought something else \citep{kour2014real}. Many people have speculated that if we knew exactly why \citet{kour2014real} thought this\dots
 
 
 \bibliographystyle{unsrtnat}

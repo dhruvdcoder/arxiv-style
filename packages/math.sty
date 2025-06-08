@@ -1,9 +1,11 @@
 %%%%%%%% Math utils %%%%%%%%%%%%%%
-\usepackage{amsmath, amsfonts}
+\usepackage{amsmath}
+\usepackage{amsfonts}
 \usepackage{bm} % for bold greek letters
 \usepackage{mathtools} % for paired delimiters like \abs, \norm etc
 
-% operators
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% region: common operators
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator{\sign}{sign} % sign function
@@ -22,3 +24,431 @@
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}% absolute value: \abs{x} will produce |x|
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}% ceiling: \ceil{x}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}% floor: \floor{x}
+\newcommand{\dd}{\mathop{}\!{d}}
+% endregion: common operators
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% region: Probability related operators
+\let\P\undefined
+%\DeclarePairedDelimiter\P{P\left(}{\right)}%
+\newcommand{\P}[1]{P\left(#1\right)}
+\newcommand{\E}{\mathop{\mathbb{E}}} % expectation
+\newcommand{\Var}{\mathop{\textrm{Var}}} % variance
+\newcommand{\Cov}{\mathop{\textrm{Cov}}} % covariance
+\newcommand{\KL}{D_{\textnormal{KL}}} % Kullback-Leibler divergence
+\newcommand{\given}{\;\middle\;} % conditional probability same as \mid which inserts \; space
+% endregion: Probability related operators
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% region: shorthands for vectors, matrices, tensors, graphs and sets
+
+
+% https://tex.stackexchange.com/questions/3535/bold-math-automatic-choice-between-mathbf-and-boldsymbol-for-latin-and-greek
+
+% Note:
+% \bm{} preserves the underlying font of the letter, eg. italic, etc.
+% \mathbf{} always uses upright roman boldface
+% We use \bm{} for vectors and matrices as done here.
+% If you don't change anything and use \bm{} as done here, you can simply use the characters
+% as the entries for example, $\va$ for a vector and $a_i$ for an entry of $\va$ vector.
+
+% Vectors
+\def\vzero{{\bm{0}}}
+\def\vone{{\bm{1}}}
+\def\vmu{{\bm{\mu}}}
+\def\vtheta{{\bm{\theta}}}
+\def\va{{\bm{a}}}
+\def\vb{{\bm{b}}}
+\def\vc{{\bm{c}}}
+\def\vd{{\bm{d}}}
+\def\ve{{\bm{e}}}
+\def\vf{{\bm{f}}}
+\def\vg{{\bm{g}}}
+\def\vh{{\bm{h}}}
+\def\vi{{\bm{i}}}
+\def\vj{{\bm{j}}}
+\def\vk{{\bm{k}}}
+\def\vl{{\bm{l}}}
+\def\vm{{\bm{m}}}
+\def\vn{{\bm{n}}}
+\def\vo{{\bm{o}}}
+\def\vp{{\bm{p}}}
+\def\vq{{\bm{q}}}
+\def\vr{{\bm{r}}}
+\def\vs{{\bm{s}}}
+\def\vt{{\bm{t}}}
+\def\vu{{\bm{u}}}
+\def\vv{{\bm{v}}}
+\def\vw{{\bm{w}}}
+\def\vx{{\bm{x}}}
+\def\vy{{\bm{y}}}
+\def\vz{{\bm{z}}}
+
+% Elements of vectors
+\def\evalpha{{\alpha}}
+\def\evbeta{{\beta}}
+\def\evepsilon{{\epsilon}}
+\def\evlambda{{\lambda}}
+\def\evomega{{\omega}}
+\def\evmu{{\mu}}
+\def\evpsi{{\psi}}
+\def\evsigma{{\sigma}}
+\def\evtheta{{\theta}}
+\def\eva{{a}}
+\def\evb{{b}}
+\def\evc{{c}}
+\def\evd{{d}}
+\def\eve{{e}}
+\def\evf{{f}}
+\def\evg{{g}}
+\def\evh{{h}}
+\def\evi{{i}}
+\def\evj{{j}}
+\def\evk{{k}}
+\def\evl{{l}}
+\def\evm{{m}}
+\def\evn{{n}}
+\def\evo{{o}}
+\def\evp{{p}}
+\def\evq{{q}}
+\def\evr{{r}}
+\def\evs{{s}}
+\def\evt{{t}}
+\def\evu{{u}}
+\def\evv{{v}}
+\def\evw{{w}}
+\def\evx{{x}}
+\def\evy{{y}}
+\def\evz{{z}}
+
+% Matrix
+\def\mA{{\bm{A}}}
+\def\mB{{\bm{B}}}
+\def\mC{{\bm{C}}}
+\def\mD{{\bm{D}}}
+\def\mE{{\bm{E}}}
+\def\mF{{\bm{F}}}
+\def\mG{{\bm{G}}}
+\def\mH{{\bm{H}}}
+\def\mI{{\bm{I}}}
+\def\mJ{{\bm{J}}}
+\def\mK{{\bm{K}}}
+\def\mL{{\bm{L}}}
+\def\mM{{\bm{M}}}
+\def\mN{{\bm{N}}}
+\def\mO{{\bm{O}}}
+\def\mP{{\bm{P}}}
+\def\mQ{{\bm{Q}}}
+\def\mR{{\bm{R}}}
+\def\mS{{\bm{S}}}
+\def\mT{{\bm{T}}}
+\def\mU{{\bm{U}}}
+\def\mV{{\bm{V}}}
+\def\mW{{\bm{W}}}
+\def\mX{{\bm{X}}}
+\def\mY{{\bm{Y}}}
+\def\mZ{{\bm{Z}}}
+\def\mBeta{{\bm{\beta}}}
+\def\mPhi{{\bm{\Phi}}}
+\def\mLambda{{\bm{\Lambda}}}
+\def\mSigma{{\bm{\Sigma}}}
+
+% Entries of a matrix
+\def\emLambda{{\Lambda}}
+\def\emA{{A}}
+\def\emB{{B}}
+\def\emC{{C}}
+\def\emD{{D}}
+\def\emE{{E}}
+\def\emF{{F}}
+\def\emG{{G}}
+\def\emH{{H}}
+\def\emI{{I}}
+\def\emJ{{J}}
+\def\emK{{K}}
+\def\emL{{L}}
+\def\emM{{M}}
+\def\emN{{N}}
+\def\emO{{O}}
+\def\emP{{P}}
+\def\emQ{{Q}}
+\def\emR{{R}}
+\def\emS{{S}}
+\def\emT{{T}}
+\def\emU{{U}}
+\def\emV{{V}}
+\def\emW{{W}}
+\def\emX{{X}}
+\def\emY{{Y}}
+\def\emZ{{Z}}
+\def\emSigma{{\Sigma}}
+
+
+
+% Tensor
+% Declare a new math alphabet for sans-serif slanted text
+% \encodingdefault: uses the default encoding
+% \sfdefault: uses the sans-serif font family
+% m: medium weight
+% sl: slanted style
+\DeclareMathAlphabet{\mathsfit}{\encodingdefault}{\sfdefault}{m}{sl}
+
+% Set the bold version of the math alphabet
+% bx: extra bold weight
+% n: normal (non-slanted) style
+\SetMathAlphabet{\mathsfit}{bold}{\encodingdefault}{\sfdefault}{bx}{n}
+
+% Create a command \tens that typesets its argument in bold sans-serif slanted style
+% This is the standard notation for tensors in physics and mathematics
+% Usage: \tens{A} produces a bold sans-serif slanted A
+\newcommand{\tens}[1]{\bm{\mathsfit{#1}}}
+\def\tA{{\tens{A}}}
+\def\tB{{\tens{B}}}
+\def\tC{{\tens{C}}}
+\def\tD{{\tens{D}}}
+\def\tE{{\tens{E}}}
+\def\tF{{\tens{F}}}
+\def\tG{{\tens{G}}}
+\def\tH{{\tens{H}}}
+\def\tI{{\tens{I}}}
+\def\tJ{{\tens{J}}}
+\def\tK{{\tens{K}}}
+\def\tL{{\tens{L}}}
+\def\tM{{\tens{M}}}
+\def\tN{{\tens{N}}}
+\def\tO{{\tens{O}}}
+\def\tP{{\tens{P}}}
+\def\tQ{{\tens{Q}}}
+\def\tR{{\tens{R}}}
+\def\tS{{\tens{S}}}
+\def\tT{{\tens{T}}}
+\def\tU{{\tens{U}}}
+\def\tV{{\tens{V}}}
+\def\tW{{\tens{W}}}
+\def\tX{{\tens{X}}}
+\def\tY{{\tens{Y}}}
+\def\tZ{{\tens{Z}}}
+
+
+
+% entries of a tensor
+% Same font as tensor, without \bm wrapper
+\newcommand{\etens}[1]{\mathsfit{#1}}
+\def\etLambda{{\etens{\Lambda}}}
+\def\etA{{\etens{A}}}
+\def\etB{{\etens{B}}}
+\def\etC{{\etens{C}}}
+\def\etD{{\etens{D}}}
+\def\etE{{\etens{E}}}
+\def\etF{{\etens{F}}}
+\def\etG{{\etens{G}}}
+\def\etH{{\etens{H}}}
+\def\etI{{\etens{I}}}
+\def\etJ{{\etens{J}}}
+\def\etK{{\etens{K}}}
+\def\etL{{\etens{L}}}
+\def\etM{{\etens{M}}}
+\def\etN{{\etens{N}}}
+\def\etO{{\etens{O}}}
+\def\etP{{\etens{P}}}
+\def\etQ{{\etens{Q}}}
+\def\etR{{\etens{R}}}
+\def\etS{{\etens{S}}}
+\def\etT{{\etens{T}}}
+\def\etU{{\etens{U}}}
+\def\etV{{\etens{V}}}
+\def\etW{{\etens{W}}}
+\def\etX{{\etens{X}}}
+\def\etY{{\etens{Y}}}
+\def\etZ{{\etens{Z}}}
+
+
+
+
+% Sets
+%\newcommand{\suchthat}{\;\ifnum\currentgrouptype=16 \middle\fi|\;} % such that
+\newcommand{\st}{\;\middle\;} % such that
+\def\sA{{\mathbb{A}}}
+\def\sB{{\mathbb{B}}}
+\def\sC{{\mathbb{C}}}
+\def\sD{{\mathbb{D}}}
+% Don't use a set called E, because this would be the same as our symbol
+% for expectation.
+\def\sF{{\mathbb{F}}}
+\def\sG{{\mathbb{G}}}
+\def\sH{{\mathbb{H}}}
+\def\sI{{\mathbb{I}}}
+\def\sJ{{\mathbb{J}}}
+\def\sK{{\mathbb{K}}}
+\def\sL{{\mathbb{L}}}
+\def\sM{{\mathbb{M}}}
+\def\sN{{\mathbb{N}}}
+\def\sO{{\mathbb{O}}}
+\def\sP{{\mathbb{P}}}
+\def\sQ{{\mathbb{Q}}}
+\def\sR{{\mathbb{R}}}
+\def\sS{{\mathbb{S}}}
+\def\sT{{\mathbb{T}}}
+\def\sU{{\mathbb{U}}}
+\def\sV{{\mathbb{V}}}
+\def\sW{{\mathbb{W}}}
+\def\sX{{\mathbb{X}}}
+\def\sY{{\mathbb{Y}}}
+\def\sZ{{\mathbb{Z}}}
+
+
+
+
+
+% Graph
+\def\gA{{\mathcal{A}}}
+\def\gB{{\mathcal{B}}}
+\def\gC{{\mathcal{C}}}
+\def\gD{{\mathcal{D}}}
+\def\gE{{\mathcal{E}}}
+\def\gF{{\mathcal{F}}}
+\def\gG{{\mathcal{G}}}
+\def\gH{{\mathcal{H}}}
+\def\gI{{\mathcal{I}}}
+\def\gJ{{\mathcal{J}}}
+\def\gK{{\mathcal{K}}}
+\def\gL{{\mathcal{L}}}
+\def\gM{{\mathcal{M}}}
+\def\gN{{\mathcal{N}}}
+\def\gO{{\mathcal{O}}}
+\def\gP{{\mathcal{P}}}
+\def\gQ{{\mathcal{Q}}}
+\def\gR{{\mathcal{R}}}
+\def\gS{{\mathcal{S}}}
+\def\gT{{\mathcal{T}}}
+\def\gU{{\mathcal{U}}}
+\def\gV{{\mathcal{V}}}
+\def\gW{{\mathcal{W}}}
+\def\gX{{\mathcal{X}}}
+\def\gY{{\mathcal{Y}}}
+\def\gZ{{\mathcal{Z}}}
+
+% endregion: shorthands for vectors, matrices, tensors, graphs and sets
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% region: theorem environments
+% Uses amsthm package. See https://www.ams.org/arc/tex/amscls/amsthdoc.pdf for documentation.
+
+%%%%%%%%%%%%%%%%% Define new theorem styles %%%%%%%%%%%%%%%%%%%%%
+% Basic syntax
+% \newtheorem{envname}{EnvHeading} 
+% Here the user will use \begin{envname} text... \end{envname} and it will produce numbered `EnvHeading 1. text...` in the document.
+
+% Starred version for unnumbered environments
+% \newtheorem*{envname}{EnvHeading} used in the same way as \begin{envname} text... \end{envname} but produces unnumbered `EnvHeading. text...` in the document.
+
+% Additional options
+% Adding extra information in the heading using the optional argument
+% \newtheorem{lem}{Lemma}[Fatau's Lemma \cite{fatau}] will produce `Lemma n. (Fatau's Lemma [citation]).` as the heading in the document.
+% Citation with page numbers uses squared brackets for the page number, which can conflict with the square brackets for the optional argument.
+% To avoid this use use tilde to "hide" the square brackets from the parser,
+% like this: \begin{lem}[Fatau's Lemma~\cite[p. ~101]{ss}].
+
+% Using lists inside theorems. See https://www.ams.org/arc/tex/amscls/amsthdoc.pdf
+% For section specific numbering see https://www.ams.org/arc/tex/amscls/amsthdoc.pdf
+
+% Theorem styles there are three basic styles: plain, definition, and remark, each providing a different typographic treatment of the text.
+% plain: italic text, extra space above and below, 
+% definition: upright text, extra space above and below,
+% remark: upright text, no extra space above or below.
+% `plain' is the defualt style.
+% To use a different style, add the following line before the \newtheorem command:
+% \theoremstyle{style} for example
+
+% \theoremstyle{definition}
+%\theoremstyle{plain}% default
+%\newtheorem{thm}{Theorem}[section]
+%\newtheorem{lem}[thm]{Lemma}
+%\newtheorem{prop}[thm]{Proposition}
+%\newtheorem*{cor}{Corollary}
+%\newtheorem*{KL}{Klein's Lemma}
+%\theoremstyle{definition}
+%\newtheorem{defn}{Definition}[section]
+
+\usepackage{amsthm}
+\RequirePackage{kvoptions}
+\RequirePackage{mathtools}
+\RequirePackage{tcolorbox}
+
+\SetupKeyvalOptions{
+  family=theorems,
+  prefix=theorems@
+}
+\DeclareBoolOption[false]{colored}
+\ProcessKeyvalOptions*
+
+\theoremstyle{definition}
+\newtheorem*{definition*}{Definition}
+\newtheorem{definition}{Definition}
+\newtheorem*{example*}{Example}
+\newtheorem{example}{Example}
+\newtheorem*{question*}{Question}
+\newtheorem{question}{Question}
+\newtheorem*{experiment*}{Experiment}
+\newtheorem{experiment}{Experiment}
+
+\theoremstyle{plain}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem{corollary}{Corollary}
+\newtheorem*{claim*}{Claim}
+\newtheorem{claim}{Claim}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem{proposition}{Proposition}
+\newtheorem*{conjecture*}{Conjecture}
+\newtheorem{conjecture}{Conjecture}
+
+\theoremstyle{remark}
+\newtheorem*{remark*}{Remark}
+\newtheorem{remark}{Remark}
+\newtheorem{notation*}{Notation}
+\newtheorem{notation}{Notation}
+
+% Use \usepackage[colored=true]{theorems} to enable colored theorems
+\iftheorems@colored
+  % Rename the original 'definition' to 'innerdefinition'
+  \let\innerdefinition\definition
+  \let\endinnerdefinition\enddefinition
+
+  \renewenvironment{definition}
+    {\begin{tcolorbox}[colback=blue!5!white,frame empty]
+        \begin{innerdefinition}}
+      {\end{innerdefinition}
+    \end{tcolorbox}}
+
+  \let\innerquestion\question
+  \let\endinnerquestion\endquestion
+
+  \renewenvironment{question}
+    {\begin{tcolorbox}[colback=red!5!white,frame empty]
+        \begin{innerquestion}}
+      {\end{innerquestion}
+    \end{tcolorbox}}
+\fi
+
+% endregion: theorem environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% region: Miscellaneous
+
+% number specific equations inside align*. Use `equation....\numberthis\label{eq:ref}`'
+\newcommand\numberthis{\refstepcounter{equation}\tag{\theequation}}
+
+% endregion: Miscellaneous
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
