@@ -44,3 +44,7 @@ Different styles are present in the `styles` folder. For example, place `\usepac
 ## Handling References when submitting to arXiv.org
 
 The source code is processed using the [arxiv-collector](https://github.com/djsutherland/arxiv-collector) script. See the [README](https://github.com/djsutherland/arxiv-collector/blob/master/README.md) for more details.
+
+## Replicating Overleaf's compilation setup locally
+
+See (this)[https://tex.stackexchange.com/questions/565511/how-to-run-overleaf-locally] and (this)[https://www.overleaf.com/learn/how-to/How_does_Overleaf_compile_my_project%3F]. Basically, you will need to add a .latexmkrc with the content from overleaf's latest latexmk file.
