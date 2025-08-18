@@ -1,18 +1,46 @@
 \pdfoutput=1
 \documentclass{article}
 
+% ----------------------------------------------------------------------------
+% region: styles
 %\usepackage{styles/arxiv}
 \usepackage{styles/altpreprint}
+% if using a specific conference style, you will have to setup the following packages in this order:
+
+% set options for natbib
+%\PassOptionsToPackage{numbers,sort&compress}{natbib}
+
+% xcolor
+% \usepackage[usenames,dvipsnames,table]{xcolor}
+
+% hyperref followed by cleveref
+%\usepackage[colorlinks,linktoc=all]{hyperref}
+%\usepackage[all]{hypcap}
+%\hypersetup{citecolor=MidnightBlue}
+%\hypersetup{linkcolor=MidnightBlue}
+%\hypersetup{urlcolor=MidnightBlue}
+%% CLEVEREF must come after HYPERREF
+%\usepackage[nameinlink, capitalize]{cleveref}
+
+% the conference style will come after this, for example:
+% \usepackage{styles/neurips_2025}
+
+% See styles/altpreprint.sty for an example
+
+% endregion
+% ----------------------------------------------------------------------------
+% region: packages
+
 
 % uncomment if needed
-%\usepackage{hyperref}       % hyperlinks
-%\usepackage{url}            % simple URL typesetting
+
 \usepackage{booktabs}       % professional-quality tables
 
 \usepackage{lipsum}         % Can be removed after putting your text content
 \usepackage{graphicx}
 \usepackage{natbib}
 
+%%%%%%%%%% packages %%%%%%%%%%
 % Our files
 \usepackage{packages/colab} % for collaboration commands
 \usepackage{packages/math} % for common math symbols
@@ -69,10 +97,10 @@ pdfkeywords={First keyword, Second keyword, More},
 
 \begin{document}
 \maketitle
-\input{sections/00_abstract}
-\input{sections/01_introduction}
-\input{sections/02_related_work}
-\input{sections/03_method}
+\input{drafts/preprint/sections/00_abstract}
+\input{drafts/preprint/sections/01_introduction}
+\input{drafts/preprint/sections/02_related_work}
+\input{drafts/preprint/sections/03_method}
 
 % keywords can be removed
 %\keywords{First keyword \and Second keyword \and More}
@@ -84,5 +112,6 @@ Here is an example usage of the two main commands (\verb+citet+ and \verb+citep+
 \bibliographystyle{unsrtnat}
 \bibliography{references}
 
+\input{drafts/preprint/sections/z0_appendix}
 
 \end{document}

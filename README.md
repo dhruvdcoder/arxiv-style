@@ -7,6 +7,14 @@ Copy or rename `template.tex` to `main.tex` and start writing your paper.
 
 # Features
 
+## Multiple Drafts
+
+1. Create copies of the `drafts/preprint`, for example as `drafts/iclm`, `drafts/workshop`, etc. 
+2. Keep only one file with the name `main.tex` such that at any point only one draft is compiled. To do this rename to `preprint.tex`, `icml.tex` etc. You will have custom content in the main file for each draft, therefore, keep separate main files, just don't have `main` in the file name except for the active draft.
+3. In the active main file, change the `\input` commands to point to the correct draft folder.
+
+
+
 ## TODO Notes
 `packages/colab.sty` contains macros and commands for authors to leave comments. It provides a quick way to hide all the comments when you are ready to submit or if you want to see the true length of the paper. To hide all the comments and annotations, uncomment the `%\readytosubmit` line in `packages/colab.sty`. Note that when commented, i.e., not ready to submit, in addition to the comments being visible in the pdf, the margins of the pdf will also be relaxed to accommodate the comments. If you are using this file as a drop-in in some other latex project, the relaxation of margin might raise errors or give warnings. For example, the ICML template raises errors when the margins are relaxed. You should not worry about these error. They will disappear when you uncomment the `%\readytosubmit` line.
 
@@ -40,11 +48,7 @@ Different styles are present in the `styles` folder. For example, place `\usepac
 
 
 
-
 ## Handling References when submitting to arXiv.org
 
-The source code is processed using the [arxiv-collector](https://github.com/djsutherland/arxiv-collector) script. See the [README](https://github.com/djsutherland/arxiv-collector/blob/master/README.md) for more details.
+We use the [arxiv-collector](https://github.com/djsutherland/arxiv-collector) script to collect the source files that are needed to submit to arXiv.org. This script will be automatically run at the end of compilation when you compile using `latexmk`. This also means that the compilation will have have the same behavior on overleaf as well. See [how overleaf compiles](https://www.overleaf.com/learn/how-to/How_does_Overleaf_compile_my_project%3F), [how to replicate overleaf's compilation setup locally](https://tex.stackexchange.com/questions/565511/how-to-run-overleaf-locally), and the [README of arxiv-collector](https://github.com/djsutherland/arxiv-collector/blob/master/README.md) for more details.
 
-## Replicating Overleaf's compilation setup locally
-
-See (this)[https://tex.stackexchange.com/questions/565511/how-to-run-overleaf-locally] and (this)[https://www.overleaf.com/learn/how-to/How_does_Overleaf_compile_my_project%3F]. Basically, you will need to add a .latexmkrc with the content from overleaf's latest latexmk file.
