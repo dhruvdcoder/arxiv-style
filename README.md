@@ -52,3 +52,10 @@ Different styles are present in the `styles` folder. For example, place `\usepac
 
 We use the [arxiv-collector](https://github.com/djsutherland/arxiv-collector) script to collect the source files that are needed to submit to arXiv.org. This script will be automatically run at the end of compilation when you compile using `latexmk`. This also means that the compilation will have have the same behavior on overleaf as well. See [how overleaf compiles](https://www.overleaf.com/learn/how-to/How_does_Overleaf_compile_my_project%3F), [how to replicate overleaf's compilation setup locally](https://tex.stackexchange.com/questions/565511/how-to-run-overleaf-locally), and the [README of arxiv-collector](https://github.com/djsutherland/arxiv-collector/blob/master/README.md) for more details.
 
+
+# Quirks of LatexWorkshop on VSCode
+
+1. Making sure latexmk finds all the latex compiler binaries. 
+    TODO (add details from personal notes here.)
+
+2. Adding different types of build pipelines to LatexWorkshop: `pdflatex` for fast compilation, `latexmk`  for replicating overleaf's compilation setup that also generates `arxiv.tar.gz` with each compilation.
