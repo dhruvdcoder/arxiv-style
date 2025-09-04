@@ -16,7 +16,7 @@
 %
 %1. `\TODO{}`: Common TODO note that can be used by anyone.
 %2. `\sout{}`: Stands for "strike out". Use this to mark text that you think should be removed. In the submission ready version, the marked text will not be visible.
-%3. `\comment{}`: Use this to leave an inline (not a todo note comment) comment in red color. This will not be visible in the submission ready version.
+%3. `\Comment{}`: Use this to leave an inline (not a todo note comment) comment in red color. This will not be visible in the submission ready version.
 %4. `\na{}`: Usually used in combination with `\sout{}`, like `\sout{something to remove}\na{something added in its place}` to highlight, in green, the new text added. The green color will not be visible in the submission ready version.
 %5. `\mr{}`: Stands for "maybe remove". It is a suggestion to remove some text. The text will be highlighted in gray. The text will not be removed in the submission ready version, and will appear as normal text. This is a milder version of `\sout{}`, which removes the text in the submission ready version.
 %
@@ -50,7 +50,7 @@
 % common todo command
 \newcommand{\TODO}[1]{\ifsubmissionready\else\todo[color=lightskyblue]{\textbf{TODO:} \textit{#1}}\fi}
 % inline comment
-\newcommand{\comment}[1]{\textcolor{red}{\textit{#1}}}
+\newcommand{\Comment}[1]{\textcolor{red}{\textit{#1}}}
 
 % command to highligh changes. Kept for submission
 \newcommand{\na}[1]{\ifsubmissionready#1\else\textcolor{darkgreen}{#1}\fi}
