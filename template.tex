@@ -94,6 +94,11 @@ pdfsubject={q-bio.NC, q-bio.QM},
 pdfauthor={Dhruvesh Patel, Patel Dhruvesh},
 pdfkeywords={First keyword, Second keyword, More},
 }
+
+% Reset footnotes to use Arabic numerals
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\setcounter{footnote}{0}
+
 \usepackage{etoc}
 \begin{document}
 \etocdepthtag.toc{mtchapter}              % Tag content from here as "mtchapter"
