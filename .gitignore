@@ -241,3 +241,7 @@ TSWLatexianTemp*
 # generated if using elsarticle.cls
 *.spl
 .DS_Store
+
+# misc editor related
+.cursorindexingignore
+.specstory
