@@ -94,8 +94,13 @@ pdfsubject={q-bio.NC, q-bio.QM},
 pdfauthor={Dhruvesh Patel, Patel Dhruvesh},
 pdfkeywords={First keyword, Second keyword, More},
 }
-
+\usepackage{etoc}
 \begin{document}
+\etocdepthtag.toc{mtchapter}              % Tag content from here as "mtchapter"
+\etocsettagdepth{mtchapter}{subsection}   % Show main content down to subsection level
+\etocsettagdepth{mtappendix}{none}        % Hide appendix content completely
+% we tag the content but don't call \tableofcontents because we only want table for appendix.
+
 \maketitle
 \input{drafts/preprint/sections/00_abstract}
 \input{drafts/preprint/sections/01_introduction}
@@ -111,6 +116,21 @@ Here is an example usage of the two main commands (\verb+citet+ and \verb+citep+
 
 \bibliographystyle{unsrtnat}
 \bibliography{references}
+
+\newpage
+\appendix
+
+% restore \addcontentsline which altpreprint style disables
+\makeatletter
+\def\addcontentsline#1#2#3{%
+  \addtocontents{#1}{\protect\contentsline{#2}{#3}{\thepage}{\@currentHref}{}}}
+\makeatother
+
+\etocdepthtag.toc{mtappendix}             % Tag appendix content as "mtappendix"
+\etocsettagdepth{mtchapter}{none}         % Hide main content (was visible before)
+\etocsettagdepth{mtappendix}{subsubsection} % Show appendix content down to subsubsection 
+\etocsettocstyle{\section*{ Appendix for Insertion Based Sequence Generation with Learnable Order Dynamics}}{}  % Custom title for appendix ToC
+\tableofcontents
 
 \input{drafts/preprint/sections/z0_appendix}
 
