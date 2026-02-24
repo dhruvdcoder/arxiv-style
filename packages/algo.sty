@@ -1,2 +1,9 @@
 \usepackage{algorithm}
-\usepackage{algorithmic}
+\usepackage{algcompatible}
+\newcommand{\commentwidth}{2.0cm} %
+\algnewcommand{\CommentLine}[1]{%
+  \hfill\makebox[\commentwidth][l]{{\footnotesize$\triangleright$~#1}}%
+}
+\algnewcommand{\CommentShort}[1]{%
+  \hfill{\footnotesize$\triangleright$~#1}%
+}
