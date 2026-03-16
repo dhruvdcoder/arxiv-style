@@ -245,3 +245,4 @@ TSWLatexianTemp*
 # misc editor related
 .cursorindexingignore
 .specstory
+*.code-workspace
